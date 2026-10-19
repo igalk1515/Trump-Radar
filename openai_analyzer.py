@@ -2,9 +2,13 @@ import openai
 from openai import OpenAI
 from text_cleaner import clean_text
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize OpenAI client
-client = OpenAI(api_key="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")  # Replace safely!
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 def analyze_post(raw_text: str) -> dict:
     cleaned_text = clean_text(raw_text).strip()

@@ -1,10 +1,14 @@
 # telegram_bot.py
 
+import os
 import requests
+from dotenv import load_dotenv
 
-TELEGRAM_TOKEN = "7200645597:AAHZJLtdLBQRS48jOCqAjb9luYVHMEW0HgQ"
-TELEGRAM_CHAT_ID = "@TrumpFeedUpdates"  # Your Telegram CHANNEL username with @
-# TELEGRAM_CHAT_ID = "889968462"  # Your Telegram user ID
+load_dotenv()
+
+TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
+# Channel username with @, or your numeric user ID for testing
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "@TrumpFeedUpdates")
 
 def send_message(text):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"

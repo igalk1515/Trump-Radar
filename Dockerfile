@@ -32,8 +32,8 @@ RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd6
     apt install -y ./google-chrome-stable_current_amd64.deb && \
     rm google-chrome-stable_current_amd64.deb
 
-# Install ChromeDriver matching Chrome 135
-RUN wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/135.0.7049.114/linux64/chromedriver-linux64.zip" && \
+# Install ChromeDriver matching Chrome 141
+RUN wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/141.0.7390.107/linux64/chromedriver-linux64.zip" && \
     unzip chromedriver-linux64.zip && \
     mv chromedriver-linux64/chromedriver /usr/bin/chromedriver && \
     chmod +x /usr/bin/chromedriver && \
